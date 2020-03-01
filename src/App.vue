@@ -4,7 +4,9 @@
       :numCorrect="numCorrect"
       :numTotal="numTotal"
     />
-    <Category />
+    <Category
+      :urls="urls"
+    />
     <b-container class="bv-example-row">
       <b-row>
         <b-col sm="6" offset="3">
@@ -71,6 +73,9 @@ export default {
         this.numCorrect++
       }
       this.numTotal++
+    },
+    pickCategory() {
+      
     }
   },
   mounted: function() {

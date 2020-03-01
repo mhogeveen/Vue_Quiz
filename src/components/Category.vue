@@ -2,18 +2,21 @@
   <div>
     <p class="catText">Choose a category:</p>
     <b-nav tabs>
-      <b-nav-item >Animals</b-nav-item>
-      <b-nav-item disabled>Mythology</b-nav-item>
-      <b-nav-item disabled>Art</b-nav-item>
-      <b-nav-item disabled>Sports</b-nav-item>
-      <b-nav-item disabled>Science & Nature</b-nav-item>
+      <b-nav-item
+        v-for="(url, index) in urls"
+        :key="index"
+      >
+        {{ url.name }}
+      </b-nav-item>
     </b-nav>
   </div>
 </template>
 
 <script>
   export default {
-
+    props: {
+      urls: Array
+    }
   }
 </script>
 
