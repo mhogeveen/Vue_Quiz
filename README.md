@@ -1,4 +1,5 @@
-# quiz
+# Vue.js Quiz Project
+Building off of the FreeCodeCamp.org Vue.js tutorial on YouTube.
 
 ## Project setup
 ```
