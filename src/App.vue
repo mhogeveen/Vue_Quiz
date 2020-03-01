@@ -6,6 +6,7 @@
     />
     <Category
       :urls="urls"
+      :pickCategory="pickCategory"
     />
     <b-container class="bv-example-row">
       <b-row>
@@ -74,21 +75,30 @@ export default {
       }
       this.numTotal++
     },
-    pickCategory() {
-      
+    pickCategory(value) {
+      let pickedUrl = this.urls[value].url
+      fetch(pickedUrl, {
+        method: 'get'
+      })
+      .then((response) => {
+        return response.json()
+      })
+      .then((jsonData) => {
+        this.questions = jsonData.results
+      })
     }
   },
-  mounted: function() {
-    fetch('https://opentdb.com/api.php?amount=10&category=27&type=multiple', {
-      method: 'get'
-    })
-    .then((response) => {
-      return response.json()
-    })
-    .then((jsonData) => {
-      this.questions = jsonData.results
-    })
-  }
+  // mounted: function(pickedCategory) {
+  //   fetch(pickedCategory, {
+  //     method: 'get'
+  //   })
+  //   .then((response) => {
+  //     return response.json()
+  //   })
+  //   .then((jsonData) => {
+  //     this.questions = jsonData.results
+  //   })
+  // }
 }
 </script>
 
