@@ -2,7 +2,7 @@
   <div class="question-box-container">
     <b-jumbotron>
       <template v-slot:lead>
-        {{ currentQuestion.question}}
+        {{ currentQuestion.question | charTransform}}
       </template>
 
       <hr class="my-4">
@@ -14,7 +14,7 @@
           @click="selectAnswer(index)"
           :class="answerClass(index)"
         >
-          {{ answer }}
+          {{ answer | charTransform }}
         </b-list-group-item>
       </b-list-group>
 
@@ -39,7 +39,8 @@
     props: {
       currentQuestion: Object,
       next: Function,
-      increment: Function
+      increment: Function,
+      charTransform: Function
     },
     data() {
       return {
@@ -96,6 +97,13 @@
           answerClass = 'incorrect'
         }
         return answerClass
+      }
+    },
+    filters: {
+      charTransform: (html) => {
+        let txt = document.createElement('textarea')
+        txt.innerHTML = html
+        return txt.value
       }
     }
   }
