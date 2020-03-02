@@ -1,9 +1,10 @@
 <template>
   <div class="question-box-container">
     <b-jumbotron>
-      <template v-slot:lead>
+      <p>Question: {{ questionNum }}</p>
+      <h3>
         {{ currentQuestion.question | charTransform}}
-      </template>
+      </h3>
 
       <hr class="my-4">
 
@@ -25,7 +26,10 @@
       >
         Submit
       </b-button>
-      <b-button @click="next" variant="success" href="#">
+      <b-button
+        @click="next(); addNum();"
+        variant="success"
+      >
         Next
       </b-button>
     </b-jumbotron>
@@ -40,7 +44,9 @@
       currentQuestion: Object,
       next: Function,
       increment: Function,
-      charTransform: Function
+      charTransform: Function,
+      questionNum: Number,
+      addNum: Function
     },
     data() {
       return {

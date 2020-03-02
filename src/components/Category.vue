@@ -5,7 +5,7 @@
       <b-nav-item
         v-for="(url, index) in urls"
         :key="index"
-        @click="pickCategory(index)"
+        @click="pickCategory(index); resetNum()"
       >
         {{ url.name }}
       </b-nav-item>
@@ -17,7 +17,8 @@
   export default {
     props: {
       urls: Array,
-      pickCategory: Function
+      pickCategory: Function,
+      resetNum: Function
     }
   }
 </script>
