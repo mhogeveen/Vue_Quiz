@@ -67,6 +67,10 @@ export default {
         {
           name: 'Science & Nature',
           url: 'https://opentdb.com/api.php?amount=10&category=17&type=multiple'
+        },
+        {
+          name: 'Geography',
+          url: 'https://opentdb.com/api.php?amount=10&category=22&type=multiple'
         }
       ]
     }
@@ -94,6 +98,7 @@ export default {
       })
 
       this.currentCategory = this.urls[value].name
+      this.index = 0
     },
     addNum() {
       this.questionNum++

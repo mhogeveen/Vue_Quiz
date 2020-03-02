@@ -1,7 +1,7 @@
 <template>
   <div class="question-box-container">
     <b-jumbotron>
-      <p>Question: {{ questionNum }}</p>
+      <p>Question: {{ questionNum }} / 10</p>
       <h3>
         {{ currentQuestion.question | charTransform}}
       </h3>
@@ -29,9 +29,17 @@
       <b-button
         @click="next(); addNum();"
         variant="success"
+        :disabled="questionNum === 10"
       >
         Next
       </b-button>
+      <p
+        v-if="questionNum === 10"
+        class="mt-4"
+      >
+        End of category quiz<br>
+        Choose a different category
+      </p>
     </b-jumbotron>
   </div>
 </template>
