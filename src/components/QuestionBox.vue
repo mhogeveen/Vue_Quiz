@@ -126,12 +126,20 @@
 <style lang='css' scoped>
   .question-box-container {
     margin-top: 30px;
+    color: #0d0d0d;
+  }
+  .jumbotron {
+    background-color: rgba(255,255,255,0.7);
+    padding: 30px;
   }
   .list-group {
     margin-bottom: 15px;
   }
+  .list-group-item {
+    background-color: rgba(255,255,255,0.3);
+  }
   .list-group-item:hover {
-    background: #eee;
+    background: rgba(255,255,255,0.5);
     cursor: pointer;
   }
   .selected {

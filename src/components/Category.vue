@@ -1,15 +1,17 @@
 <template>
   <div>
-    <p class="catText">Choose a category:</p>
-    <b-nav tabs>
-      <b-nav-item
-        v-for="(url, index) in urls"
-        :key="index"
-        @click="pickCategory(index); resetNum()"
-      >
-        {{ url.name }}
-      </b-nav-item>
-    </b-nav>
+    <div class="category-bar-container">
+      <p class="catText">Choose a category:</p>
+      <b-nav tabs align="center">
+        <b-nav-item
+          v-for="(url, index) in urls"
+          :key="index"
+          @click="pickCategory(index); resetNum()"
+        >
+          {{ url.name }}
+        </b-nav-item>
+      </b-nav>
+    </div>
     <h4 class="currentCategory">Current category: {{ currentCategory }}</h4>
   </div>
 </template>
@@ -27,18 +29,22 @@
 </script>
 
 <style lang="css" scoped>
-  .nav-item a.disabled {
-    color: #0d0d0d;
+  .nav-item a {
+    color: #f2f2f2;
   }
-  .nav {
+  /* .nav {
     display: flex;
     justify-content: center;
-  }
+  } */
   .catText {
-    margin: 0.5rem 0 0 0;
-    font-size: 1rem;
+    padding: 0.5rem 0 0 0;
+    margin: 0;
+    font-size: 1.25rem;
   }
   .currentCategory {
     margin: 2rem 0 0 0;
+  }
+  .category-bar-container {
+    background: rgba(255,255,255,0.1);
   }
 </style>

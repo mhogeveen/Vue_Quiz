@@ -129,7 +129,9 @@ export default {
   font-family: Montserrat, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
   text-align: center;
-  color: #0d0d0d;
+  color: #f2f2f2;
+  background: linear-gradient(120deg, rgba(1,85,140,1) 0%, rgba(4,112,141,1) 25%, rgba(4,139,126,1) 50%, rgba(9,166,123,1) 75%, rgba(5,191,125,1) 100%);
 }
 </style>
