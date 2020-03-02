@@ -88,6 +88,9 @@ export default {
       })
     }
   },
+  mounted: function() {
+    this.pickCategory(0)
+  }
   // mounted: function(pickedCategory) {
   //   fetch(pickedCategory, {
   //     method: 'get'
