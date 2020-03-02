@@ -10,6 +10,7 @@
         {{ url.name }}
       </b-nav-item>
     </b-nav>
+    <h4 class="currentCategory">Current category: {{ currentCategory }}</h4>
   </div>
 </template>
 
@@ -18,7 +19,9 @@
     props: {
       urls: Array,
       pickCategory: Function,
-      resetNum: Function
+      resetNum: Function,
+      currentCategory: String,
+      questions: Array
     }
   }
 </script>
@@ -34,5 +37,8 @@
   .catText {
     margin: 0.5rem 0 0 0;
     font-size: 1rem;
+  }
+  .currentCategory {
+    margin: 2rem 0 0 0;
   }
 </style>

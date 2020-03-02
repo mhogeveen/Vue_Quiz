@@ -7,6 +7,7 @@
     <Category
       :urls="urls"
       :pickCategory="pickCategory"
+      :currentCategory="currentCategory"
       :resetNum="resetNum"
     />
     <b-container class="bv-example-row">
@@ -45,6 +46,7 @@ export default {
       numCorrect: 0,
       numTotal: 0,
       questionNum: 1,
+      currentCategory: '',
       urls: [
         {
           name: 'Animals',
@@ -90,6 +92,8 @@ export default {
       .then((jsonData) => {
         this.questions = jsonData.results
       })
+
+      this.currentCategory = this.urls[value].name
     },
     addNum() {
       this.questionNum++
